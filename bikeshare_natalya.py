@@ -2,6 +2,9 @@ import time
 import pandas as pd
 import numpy as np
 
+#Explore bikeshare data based on city, month, and day of the week data specified by user
+#validate input paramenters and handle errors
+
 CITY_DATA = { 'chicago': 'chicago.csv',
               'chi': 'chicago.csv',
               'new york city': 'new_york_city.csv',
