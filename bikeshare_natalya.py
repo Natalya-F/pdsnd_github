@@ -210,7 +210,7 @@ def display_data(df):
     """Displays raw data on users request."""
     start_time = time.time()
     display = ''
-    n = 5
+    n = 10
     m = 0
 
     display = input('\nWould you like to see some raw data? Enter yes or no.\n')
@@ -218,11 +218,11 @@ def display_data(df):
     while display.lower() not in ['n', 'no']:
 
         if display.lower() in ['y','yes']:
-            # show first 5 records from the file
+            # show first 10 records from the file
             print('\nRetrieving raw data...\n')
             print(df.iloc[m:n])
-            n += 5
-            m += 5
+            n += 10
+            m += 10
         else:
             print("Incorrect value. Please try again!")
 
