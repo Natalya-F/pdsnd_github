@@ -82,14 +82,9 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-
-    # load data file into a dataframe
     df = pd.read_csv(CITY_DATA[city])
 
-    # convert the Start Time column to datetime
     df['Start Time'] = pd.to_datetime(df['Start Time'])
-
-    # extract month, day of week and Start hour from Start Time to create new columns
     df['month'] = df['Start Time'].dt.month
     df['day_of_week'] = df['Start Time'].dt.weekday_name
     df['hour'] = df['Start Time'].dt.hour
@@ -218,7 +213,7 @@ def display_data(df):
     """Displays raw data on users request."""
     start_time = time.time()
     display = ''
-    n = 5
+    n = 10
     m = 0
 
     display = input('\nWould you like to see some raw data? Enter yes or no.\n')
@@ -226,11 +221,11 @@ def display_data(df):
     while display.lower() not in ['n', 'no']:
 
         if display.lower() in ['y','yes']:
-            # show first 5 records from the file
+            # show first 10 records from the file
             print('\nRetrieving raw data...\n')
             print(df.iloc[m:n])
-            n += 5
-            m += 5
+            n += 10
+            m += 10
         else:
             print("Incorrect value. Please try again!")
 
